@@ -267,7 +267,7 @@ def _render_metric_images(selected_run: Path) -> None:
     res_img = selected_run / "results.png"
     if res_img.exists():
         st.subheader("1. Training & Validation Metric Curves over Epochs")
-        st.image(str(res_img), caption="YOLO Training Metrics", width=None)
+        st.image(str(res_img), caption="YOLO Training Metrics", use_container_width=True)
 
     cm_raw = selected_run / "confusion_matrix.png"
     cm_norm = selected_run / "confusion_matrix_normalized.png"
@@ -275,9 +275,9 @@ def _render_metric_images(selected_run: Path) -> None:
         st.subheader("2. Multi-Class Confusion Matrices")
         c1, c2 = st.columns(2)
         if cm_raw.exists():
-            c1.image(str(cm_raw), caption="Raw Confusion Matrix", width=None)
+            c1.image(str(cm_raw), caption="Raw Confusion Matrix", use_container_width=True)
         if cm_norm.exists():
-            c2.image(str(cm_norm), caption="Normalized Confusion Matrix", width=None)
+            c2.image(str(cm_norm), caption="Normalized Confusion Matrix", use_container_width=True)
 
     pr_img = selected_run / "BoxPR_curve.png"
     f1_img = selected_run / "BoxF1_curve.png"
@@ -285,9 +285,9 @@ def _render_metric_images(selected_run: Path) -> None:
         st.subheader("3. Detection Curves")
         c1, c2 = st.columns(2)
         if pr_img.exists():
-            c1.image(str(pr_img), caption="Box PR Curve", width=None)
+            c1.image(str(pr_img), caption="Box PR Curve", use_container_width=True)
         if f1_img.exists():
-            c2.image(str(f1_img), caption="Box F1 Curve", width=None)
+            c2.image(str(f1_img), caption="Box F1 Curve", use_container_width=True)
 
 
 def render_architecture_tab() -> None:

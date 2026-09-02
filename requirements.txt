@@ -1,7 +1,7 @@
 streamlit>=1.30.0
 streamlit-webrtc>=0.47.0
 av>=11.0.0
-opencv-python-headless>=4.8.0
+opencv-contrib-python-headless==4.11.0.86
 mediapipe==0.10.21
 protobuf>=3.20.0,<5.0.0
 ultralytics>=8.0.0
