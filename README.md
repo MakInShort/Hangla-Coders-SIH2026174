@@ -51,7 +51,6 @@ bas-assistant/
 ├── weights/                      # Base pretrained model weights (.pt)
 ├── streamlit_app.py              # Streamlit Web Mission Control app entrypoint
 ├── requirements.txt              # Cloud deployment dependencies
-├── packages.txt                  # Linux OS system dependencies
 └── pyproject.toml                # Build config (hatchling)
 ```
 
@@ -179,6 +178,8 @@ The Streamlit dashboard (`streamlit_app.py`) provides a web-deployable version o
 # Run local Streamlit web dashboard
 uv run streamlit run streamlit_app.py
 ```
+
+For full cloud, Docker, and WebRTC setup instructions, refer to the [Streamlit Deployment Guide](docs/streamlit-deployment-guide.md).
 
 ### 5. Verify
 
