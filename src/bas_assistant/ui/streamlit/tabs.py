@@ -50,7 +50,7 @@ def process_video_loop(
 
             annotated = annotate_pipeline_frame(frame, res)
             frame_rgb = cv2.cvtColor(annotated, cv2.COLOR_BGR2RGB)
-            frame_slot.image(frame_rgb, channels="RGB", width=None)
+            frame_slot.image(frame_rgb, channels="RGB", use_container_width=True)
 
             if res.new_events:
                 for ev in res.new_events:
@@ -224,7 +224,7 @@ def _render_dummy_mode(pipeline: Any, col_video: Any, update_cb: Callable) -> No
                 snap = build_status_snapshot(pipeline, res, DEFAULT_MICROPHONE_PROTOCOL)
                 annotated = annotate_pipeline_frame(frame, res)
                 frame_rgb = cv2.cvtColor(annotated, cv2.COLOR_BGR2RGB)
-                frame_slot.image(frame_rgb, channels="RGB", width=None)
+                frame_slot.image(frame_rgb, channels="RGB", use_container_width=True)
                 update_cb(snap)
 
             pipeline.end_session()
